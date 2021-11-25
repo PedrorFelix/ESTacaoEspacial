@@ -8,7 +8,6 @@ public class Nave {
 	private static int massa;
 	private static int potencia;
 	private static String protocolos[];
-	ייייייייייייי
 	
 	public Nave(int id, String nome, int dimensoes[], int massa, int potencia, String protocolos[]) {
 		
