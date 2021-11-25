@@ -7,7 +7,7 @@ public class Nave {
 	private static int dimensoes[];
 	private static int massa;
 	private static int potencia;
-	
+	private static String protocolos[];
 	
 	
 	
@@ -47,7 +47,7 @@ public class Nave {
 	public static void setProtocolos(String[] protocolos) {
 		Nave.protocolos = protocolos;
 	}
-	private static String protocolos[];
+	
 	
 	
 	
