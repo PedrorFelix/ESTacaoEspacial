@@ -9,7 +9,15 @@ public class Nave {
 	private static int potencia;
 	private static String protocolos[];
 	
-	
+	public Nave(int id, String nome, int dimensoes[], int massa, int potencia, String protocolos[]) {
+		
+		this.id =id;
+		this.nome = nome;
+		this.dimensoes = dimensoes;
+		this.massa = massa;
+		this.potencia = potencia;
+		this.protocolos = protocolos;
+	}
 	
 	public static int getId() {
 		return id;
