@@ -5,10 +5,6 @@ import java.util.ArrayList;
 public class EstacaoPlanetaria extends EstacaoDefault{
 
 	private int g; //gravidade planeta/lua
-<<<<<<< Updated upstream
-=======
-
-	
 
 	@Override
 	public ArrayList<String> verInfo() {
@@ -22,6 +18,4 @@ public class EstacaoPlanetaria extends EstacaoDefault{
 		return false;
 	}
 	
-
->>>>>>> Stashed changes
 }
