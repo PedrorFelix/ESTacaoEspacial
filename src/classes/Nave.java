@@ -60,7 +60,9 @@ public class Nave {
 	
 	private void verEspcs() {}
 	
-	private void validarReserva() {}
+	private void validarProtocolos() {}
+	
+	private void estaDisponivel() {};
 	
 	
 }

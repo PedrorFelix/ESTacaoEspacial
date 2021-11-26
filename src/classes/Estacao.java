@@ -1,6 +1,9 @@
 package classes;
 
+import java.util.ArrayList;
+
 public interface Estacao {
-	private void validarReserva(Reserva R){};
-	private void addReserva(Reserva R) {};
+	ArrayList<Reserva> verReservas();
+	ArrayList<String> verInfo();
+	boolean estaDisponivel();
 }
