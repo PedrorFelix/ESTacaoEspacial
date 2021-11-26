@@ -18,13 +18,13 @@ public class MenuNave {
 	}
 
 	/** 
-	 * mï¿½todo que apresenta o menu principal da nave
+	 * método que apresenta o menu principal da nave
 	 */
 	public void menuPrincipal(){
 		char op;
 		
 		// TODO ver se já tem nave escolhida, senão pedir
-		// atÃ© ser escolhida uma nave válida
+		// até ser escolhida uma nave válida
 		while( Math.abs( 4 ) != 4 ) 
 			mudarNave();
 		
@@ -95,7 +95,7 @@ public class MenuNave {
 		}
 		
 		// TODO testar se pode ser reservada
-		// ver se a estação aceita a reserva e em que perÃ­odo de tempo
+		// ver se a estação aceita a reserva e em que período de tempo
 		// se sim indica qual a reserva que pode realmente fazer
 		if(  false /* se não pode reservar */ ){
 			consola.println("A reserva não pode ser efetuada");
@@ -147,18 +147,18 @@ public class MenuNave {
 			// TODO ver se estação existe
 			if( false )
 				consola.println("Estação desconhecida!");
-		// TODO ver se estação Ã© reconhecida
+		// TODO ver se estação é reconhecida
 		} while( false );
 		return null;
 	}
 
-	/** imprime as especificaçÃµes da nave
+	/** imprime as especificações da nave
 	 */
 	private void verEspecificacoes() {
-		// TODO completar as informaçÃµes
+		// TODO completar as informações
 		consola.println( "ID_NAVE" + "  " + "NOME_NAVE" );
 		consola.println( "Potência: POTENCIA_NAVE  massa: MASSA_NAVE" );
-		consola.println( "DimensÃµes (Comp x Larg x Alt): COMP x LARG x ALT" );
+		consola.println( "Dimensões (Comp x Larg x Alt): COMP x LARG x ALT" );
 		
 		consola.println("\nProtocolos");
 		consola.println( "PROTOCOLO1" + ", " );

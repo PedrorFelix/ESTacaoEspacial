@@ -56,7 +56,9 @@ public class Nave {
 		Nave.protocolos = protocolos;
 	}
 	
+	private void verReservas() {} //Reserva[]
 	
+	private void verEspcs() {}// String[]
 	
 	
 }
