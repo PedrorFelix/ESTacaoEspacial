@@ -6,4 +6,8 @@ public class  EstacaoDefault  implements Estacao {
 	private String nome;
 	private char tipo;
 	private String protocolos[];
+	
+	
+	
+	
 }
