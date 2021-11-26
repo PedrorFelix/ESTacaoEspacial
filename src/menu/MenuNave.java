@@ -14,7 +14,7 @@ public class MenuNave {
 	 * @param alt altura da janela da consola
 	 */
 	public MenuNave( int x, int y, int comp, int alt ){
-		consola = new SConsola( "ESTaÃ§ão Espacial - Simulador de Nave", x, y, comp, alt );
+		consola = new SConsola( "ESTação Espacial - Simulador de Nave", x, y, comp, alt );
 	}
 
 	/** 
@@ -30,11 +30,11 @@ public class MenuNave {
 		
 		do {
 			// TODO alterar este menu
-			String menu = "ESTaÃ§ão Espacial - SimulaÃ§ão de Nave\n\n" +
+			String menu = "ESTação Espacial - Simulação de Nave\n\n" +
 					  "Nave: " + "IDNAVE" + "  " + "NOMENAVE" +"\n\n" +  
 		              "R - nova Reserva\n" +
 		              "V - Ver reservas\n" + 
-		              "E - ver EspecificaÃ§Ãµes\n\n\n" + 
+		              "E - ver Especificações\n\n\n" + 
 		              "N - mudar de Nave";
 
 			consola.clear();
@@ -58,7 +58,7 @@ public class MenuNave {
 					mudarNave();
 					break;
 				default:
-					consola.println("OpÃ§ão Inválida\n\n");
+					consola.println("Opção Inválida\n\n");
 					break;
 			}
 		} while( true );
@@ -71,12 +71,12 @@ public class MenuNave {
 		consola.clear();
 		consola.println("Menu de reservas\n\n"); 
 
-		// pedir estaÃ§ão
+		// pedir estação
 		pedirEstacao();
 
-		// TODO ver se nave pode usar a estaÃ§ão
+		// TODO ver se nave pode usar a estação
 		if( false ){
-			consola.println("Não pode usar essa estaÃ§ão!");
+			consola.println("Não pode usar essa estação!");
 			consola.readLine();
 			return;
 		}
@@ -84,18 +84,18 @@ public class MenuNave {
 		consola.println( "Qual o TU de entrada?\n" );
 		int entradaTU = consola.readInt();
 		
-		consola.println( "Qual o TU de saÃ­da?\n" );
+		consola.println( "Qual o TU de saída?\n" );
 		int saidaTU = consola.readInt();
 				
 		// TODO ver se nave está ocupada nesse periodo
 		if( false /* */){
-			consola.println("A nave já tem um compromisso nesse perÃ­odo!");
+			consola.println("A nave já tem um compromisso nesse período!");
 			consola.readLine();
 			return;
 		}
 		
 		// TODO testar se pode ser reservada
-		// ver se a estaÃ§ão aceita a reserva e em que perÃ­odo de tempo
+		// ver se a estação aceita a reserva e em que perÃ­odo de tempo
 		// se sim indica qual a reserva que pode realmente fazer
 		if(  false /* se não pode reservar */ ){
 			consola.println("A reserva não pode ser efetuada");
@@ -103,9 +103,9 @@ public class MenuNave {
 			return;
 		}
 			
-		// TODO completar esta informaÃ§ão
-		consola.println("EstaÃ§ão: " + "NOME ESTAÃ‡Ã‚O" + "\nNave: "+ "NOME NAVE" +
-				         "\nTU entrada: "+ "TU_ENTRADA" + "\nTU saÃ­da: " + "TU_SAIDA" );
+		// TODO completar esta informação
+		consola.println("Estação: " + "NOME ESTAÇÃO" + "\nNave: "+ "NOME NAVE" +
+				         "\nTU entrada: "+ "TU_ENTRADA" + "\nTU saída: " + "TU_SAIDA" );
 		
 		consola.println("Confirmar reserva? (S/N)");
 		char sim = Character.toUpperCase( consola.readChar() );
@@ -114,7 +114,7 @@ public class MenuNave {
 	
 		// TODO criar a reserva
 		
-		// TODO completar a informaÃ§ão
+		// TODO completar a informação
 		consola.println("Reserva criada com id: " + "ID_RESERVA" );
 		consola.readLine();
 	}
@@ -136,28 +136,28 @@ public class MenuNave {
 		consola.readLine();		
 	}
 
-	/** pede a identificaÃ§ão da estaÃ§ão
-	 * e devolve a estaÃ§ão correta
-	 * @return a estaÃ§ão que o utilizador escolheu
+	/** pede a identificação da estação
+	 * e devolve a estação correta
+	 * @return a estação que o utilizador escolheu
 	 */
 	private Object pedirEstacao() {
 		do {
-			consola.print( "NÃºmero da estaÃ§ão? ");
+			consola.print( "Número da estação? ");
 			int id = consola.readInt();
-			// TODO ver se estaÃ§ão existe
+			// TODO ver se estação existe
 			if( false )
-				consola.println("EstaÃ§ão desconhecida!");
-		// TODO ver se estaÃ§ão Ã© reconhecida
+				consola.println("Estação desconhecida!");
+		// TODO ver se estação Ã© reconhecida
 		} while( false );
 		return null;
 	}
 
-	/** imprime as especificaÃ§Ãµes da nave
+	/** imprime as especificaçÃµes da nave
 	 */
 	private void verEspecificacoes() {
-		// TODO completar as informaÃ§Ãµes
+		// TODO completar as informaçÃµes
 		consola.println( "ID_NAVE" + "  " + "NOME_NAVE" );
-		consola.println( "PotÃªncia: POTENCIA_NAVE  massa: MASSA_NAVE" );
+		consola.println( "Potência: POTENCIA_NAVE  massa: MASSA_NAVE" );
 		consola.println( "DimensÃµes (Comp x Larg x Alt): COMP x LARG x ALT" );
 		
 		consola.println("\nProtocolos");
@@ -165,25 +165,25 @@ public class MenuNave {
 		consola.readLine();
 	}
 
-	/** muda de nave, pedindo ao utilizador a identificaÃ§ão da nova nave
+	/** muda de nave, pedindo ao utilizador a identificação da nova nave
 	 */
 	private void mudarNave() {
-		consola.println( "NÃºmero da nave?");
+		consola.println( "Número da nave?");
 		int id = consola.readInt();
 		// TODO ver se nave existe
 		if( true ) {
-			consola.println("MudanÃ§a efetuada.");
+			consola.println("Mudança efetuada.");
 		}
 		else 
-			consola.println("Nave desconhecida! MudanÃ§a não efetuada");
+			consola.println("Nave desconhecida! Mudança não efetuada");
 		
 		consola.readLine();
 	}
 	
-	/** devolve a informaÃ§ão de uma reserva em formato de texto
+	/** devolve a informação de uma reserva em formato de texto
 	 */
 	private String getReservaInfo( ) {
-		// TODO completar a informaÃ§ão
-		return "ID_RESERVA estaÃ§ão: ID_ESTACAO - NOME_ESTACAO  TUi: TU_ENTRADA  TUf: TU_SAIDA";
+		// TODO completar a informação
+		return "ID_RESERVA estação: ID_ESTACAO - NOME_ESTACAO  TUi: TU_ENTRADA  TUf: TU_SAIDA";
 	}
 }

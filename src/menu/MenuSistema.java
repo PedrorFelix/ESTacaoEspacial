@@ -4,8 +4,8 @@ import consola.SConsola;
 
 
 /**
- * Classe respons√°vel pela apresenta√ß√£o e
- * processamento do menu principal da aplica√ß√£o
+ * Classe respons·vel pela apresentaÁ„o e
+ * processamento do menu principal da aplicaÁ„o
  * @author <por aqui nomes dos autores>
  */
 public class MenuSistema {
@@ -13,23 +13,23 @@ public class MenuSistema {
 	private SConsola aConsola; // a consola para a interface com o utilizador
 	
 	/**
-	 * construtor da aplica√ß√£o
+	 * construtor da aplicaÁ„o
 	 * @param x coordenada x onde deve ser colocada a janela da consola
 	 * @param y coordenada y onde deve ser colocada a janela da consola
 	 * @param comp comprimento da janela da consola
 	 * @param alt altura da janela da consola
 	 */
 	public MenuSistema( int x, int y, int comp, int alt ){
-		aConsola = new SConsola( "ESTa√ß√£o Espacial", x, y, comp, alt );
+		aConsola = new SConsola( "ESTaÁ„o Espacial", x, y, comp, alt );
 	}
 
 	/** 
-	 * m√©todo que apresenta o menu principal da aplica√ß√£o
+	 * mÈtodo que apresenta o menu principal da aplicaÁ„o
 	 */
 	public void menuPrincipal(){
-		String menu = "ESTa√ß√£o Espacial - central de comandos\n\n" + 
+		String menu = "ESTaÁ„o Espacial - central de comandos\n\n" + 
 		              "R - ver Reservas\n" + 
-		              "E - ver Esta√ß√£o\n\n\n" +
+		              "E - ver EstaÁ„o\n\n\n" +
 		              "X - sair\n\n";
 		char op;
 		do {
@@ -46,7 +46,7 @@ public class MenuSistema {
 				case 'X':
 					break;
 				default:
-					aConsola.println("Op√ß√£o Inv√°lida\n\n");
+					aConsola.println("OpÁ„o Inv·lida\n\n");
 					aConsola.readLine();
 					break;
 			}
@@ -55,11 +55,11 @@ public class MenuSistema {
 	}
 	
 	/**
-	 * imprime a informa√ß√£o completa de uma reserva
+	 * imprime a informaÁ„o completa de uma reserva
 	 */
 	private String getInfoReserva( ){
-		// TODO completar informa√ß√£o
-		return "ID_RESERVA Esta√ß√£o: ID_ESTACAO - NOME_ESTACAO"+
+		// TODO completar informaÁ„o
+		return "ID_RESERVA EstaÁ„o: ID_ESTACAO - NOME_ESTACAO"+
 				           "\nNave: ID_NAVE - NOME_NAVE" + 
 				           "\nTUi: TU_ENTRADA  TUf: TU_SAIDA";
 	}
@@ -71,7 +71,7 @@ public class MenuSistema {
 	private void verReservas() {
 		aConsola.clear();
 
-		// TODO  apresentar informa√ß√£o das reservas
+		// TODO  apresentar informaÁ„o das reservas
 		for( int i=0; i < 1; i++ ){
 			aConsola.println( getInfoReserva( ) );
 			aConsola.println();
@@ -81,21 +81,21 @@ public class MenuSistema {
 
 	
 	/**
-	 * lista a informa√ß√£o sobre uma esta√ß√£o
+	 * lista a informaÁ„o sobre uma estaÁ„o
 	 */
 	private void verEstacao(){
-		// TODO pedir a esta√ß√£o
+		// TODO pedir a estaÁ„o
 		pedirEstacao();
 		
 		aConsola.clear();
-		// TODO completar informa√ß√£o
-		aConsola.println( "Esta√ß√£o: NOME_ESTACAO" );
+		// TODO completar informaÁ„o
+		aConsola.println( "EstaÁ„o: NOME_ESTACAO" );
 		
 		aConsola.println( "Protocolos suportados" );
 		aConsola.print( "PROTOCOLO1, ...");
 		aConsola.println( "" );
 		
-		aConsola.println("Reservas na esta√ß√£o\n" );
+		aConsola.println("Reservas na estaÁ„o\n" );
 		// TODO imprimir info das reservas
 		for( int i=0; i < 1; i++ ){
 			aConsola.println( getInfoReserva( ) );
@@ -103,18 +103,18 @@ public class MenuSistema {
 		aConsola.readLine();
 	}
 
-	/** pede ao utilizador que indique uma esta√ß√£o, pedindo um id at√©
-	 * que seja introduzido um id v√°lido
-	 * @return a esta√ß√£o indicada pelo utilizador
+	/** pede ao utilizador que indique uma estaÁ„o, pedindo um id atÈ
+	 * que seja introduzido um id v·lido
+	 * @return a estaÁ„o indicada pelo utilizador
 	 */
 	private Object pedirEstacao() {
 		do {
-			aConsola.println( "N√∫mero da esta√ß√£o?");
+			aConsola.println( "N˙mero da estaÁ„o?");
 			int id = aConsola.readInt();
-			// TODO ver se a esta√ß√£o existe
+			// TODO ver se a estaÁ„o existe
 			if( false )
-				aConsola.println("Essa esta√ß√£o n√£o existe!");
-		// TODO enquanto id n√£o for v√°lido 
+				aConsola.println("Essa estaÁ„o n„o existe!");
+		// TODO enquanto id n„o for v·lido 
 		} while( false );
 		return null;
 	}
