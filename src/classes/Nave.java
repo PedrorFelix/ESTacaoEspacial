@@ -58,7 +58,7 @@ public class Nave {
 	
 	private void verReservas() {} //Reserva[]
 	
-	private void verEspcs() {}// String[]
+	private void verEspcs() {}
 	
 	
 }
