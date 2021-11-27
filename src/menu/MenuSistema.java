@@ -1,6 +1,8 @@
 package menu;
 
 import classes.Server;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import classes.Estacao;
 import consola.SConsola;
@@ -89,11 +91,11 @@ public class MenuSistema {
 	 */
 	private void verEstacao(){
 		// TODO pedir a estação
-		Estacao estacao = pedirEstacao();
+		ArrayList<String> estacao = pedirEstacao().verInfo();
 		
 		aConsola.clear();
 		// TODO completar informação
-		aConsola.println( "Estação: " + estacao.getNome() );
+		aConsola.println( "Estação: " + estacao );
 		String[] protocolos= estacao.getProtocolos();
 		aConsola.println( "Protocolos suportados" );
 		for(int i=0; i< estacao.getProtocolos().length; i++) {

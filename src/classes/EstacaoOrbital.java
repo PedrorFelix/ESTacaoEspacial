@@ -31,9 +31,14 @@ public class EstacaoOrbital extends EstacaoDefault{
 	}
 
 	@Override
-	public ArrayList<String> verInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public String verInfo() {
+		String info = "";
+		final Integer id = getId();
+		info += "ID: " + id.toString() + "\n" +
+				"NOME: " + getNome() +"\n" +
+				"TIPO: " + getTipo() +"\n";
+		
+		return info;
 	}
 
 	@Override

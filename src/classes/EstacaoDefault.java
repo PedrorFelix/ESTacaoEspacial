@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public abstract class  EstacaoDefault  implements Estacao {
 	
@@ -49,7 +50,7 @@ public abstract class  EstacaoDefault  implements Estacao {
 		this.protocolos = protocolos;
 	}
 
-	abstract public ArrayList<String> verInfo();
+	abstract public String verInfo();
 
 	abstract public boolean validarReserva();
 }
