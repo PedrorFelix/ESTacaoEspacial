@@ -55,11 +55,16 @@ public class Nave {
 		this.protocolos = protocolos;
 	}
 	
-	private String[] getEspecs() {
-		return null;
+	private String getEspecs() {
+		String info;
+		
+		return "";
 	}
 	
-	private boolean validarProtocolos() {
+	private boolean validarProtocolos(String[] protocolosEst) {
+		for (int i = 0; i < protocolos.length; i++) {
+			for ()
+		}
 		return false;
 	}
 	

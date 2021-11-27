@@ -5,8 +5,8 @@ public class Reserva {
 	private int id;
 	private Estacao est; // id estacao
 	private Nave nave;//id nave
-	private long t_in;//utu de entrada
-	private long t_out;//utu de saida
+	private long t_in;//tu de entrada
+	private long t_out;//tu de saida
 	
 	public Reserva(int id, Estacao est, Nave nave, long t_in, long t_out) {
 		this.id = id;
