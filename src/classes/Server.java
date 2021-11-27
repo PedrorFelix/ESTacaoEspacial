@@ -88,9 +88,9 @@ public class Server {
 					estacoes.put(estacao[0], new EstacaoWormHole(Integer.parseInt(estacao[0]), estacao[2], protocolos, Integer.parseInt(estacao[3]), Long.parseLong(estacao[4])));
 					break;
 				case "E":
-					protocolos = new String[estacao.length - 6];
+					protocolos = new String[estacao.length - 7];
 					index = 0;
-					for(int i = 6; i < estacao.length; i++) {
+					for(int i = 7; i < estacao.length; i++) {
 						protocolos[index++] = estacao[i];
 					}
 					index = 0;

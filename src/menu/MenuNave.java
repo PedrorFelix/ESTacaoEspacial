@@ -1,5 +1,8 @@
 package menu;
 
+import java.util.HashMap;
+
+import classes.Estacao;
 import classes.Nave;
 import classes.Server;
 import consola.SConsola;
@@ -28,9 +31,8 @@ public class MenuNave {
 	public void menuPrincipal(){
 		char op;
 		
-		// TODO ver se já tem nave escolhida, senão pedir
 		// até ser escolhida uma nave válida
-		while( Math.abs( 4 ) != 4 ) 
+		while(nave == null) 
 			mudarNave();
 		
 		do {
@@ -145,14 +147,16 @@ public class MenuNave {
 	 * e devolve a estação correta
 	 * @return a estação que o utilizador escolheu
 	 */
-	private Object pedirEstacao() {
+	private Estacao pedirEstacao() {
 		do {
-			consola.print( "Número da estação? ");
-			int id = consola.readInt();
-			// TODO ver se estação existe
-			if( false )
-				consola.println("Estação desconhecida!");
-		// TODO ver se estação é reconhecida
+			consola.println( "Número da estação?");
+			Integer id = consola.readInt();
+			HashMap<String, Estacao> estacoes= server.getEstacoes();
+			if(id<estacoes.size())
+				return estacoes.get(id.toString());	
+			
+			consola.println("Essa estação não existe!");
+		// TODO enquanto id não for válido 
 		} while( false );
 		return null;
 	}
