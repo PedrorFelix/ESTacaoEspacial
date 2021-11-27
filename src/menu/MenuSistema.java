@@ -3,7 +3,6 @@ package menu;
 import classes.Server;
 import java.util.HashMap;
 import classes.Estacao;
-import classes.EstacaoDefault;
 import consola.SConsola;
 
 
@@ -90,15 +89,18 @@ public class MenuSistema {
 	 */
 	private void verEstacao(){
 		// TODO pedir a estação
-		pedirEstacao();
+		Estacao estacao = pedirEstacao();
 		
 		aConsola.clear();
 		// TODO completar informação
-		aConsola.println( "Estação: NOME_ESTACAO" );
-		
+		aConsola.println( "Estação: " + estacao.getNome() );
+		String[] protocolos= estacao.getProtocolos();
 		aConsola.println( "Protocolos suportados" );
-		aConsola.print( "PROTOCOLO1, ...");
+		for(int i=0; i< estacao.getProtocolos().length; i++) {
+		aConsola.print(protocolos[i]);
 		aConsola.println( "" );
+		}
+		
 		
 		aConsola.println("Reservas na estação\n" );
 		// TODO imprimir info das reservas
@@ -112,17 +114,15 @@ public class MenuSistema {
 	 * que seja introduzido um id válido
 	 * @return a estação indicada pelo utilizador
 	 */
-	private Object pedirEstacao() {
+	private Estacao pedirEstacao() {
 		do {
 			aConsola.println( "Número da estação?");
 			Integer id = aConsola.readInt();
-			// TODO ver se a estação existe
 			HashMap<String, Estacao> estacoes= server.getEstacoes();
 			if(id<estacoes.size())
-				return estacoes.get(id.toString());
+				return estacoes.get(id.toString());	
 			
-			if( false )
-				aConsola.println("Essa estação não existe!");
+			aConsola.println("Essa estação não existe!");
 		// TODO enquanto id não for válido 
 		} while( false );
 		return null;
