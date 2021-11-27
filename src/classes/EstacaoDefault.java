@@ -9,6 +9,46 @@ public abstract class  EstacaoDefault  implements Estacao {
 	private char tipo;
 	private String protocolos[];
 	
+	public EstacaoDefault(int id, String nome, char tipo, String[] protocolos) {		
+		this.id = id;
+		this.nome = nome;
+		this.tipo = tipo;
+		this.protocolos = protocolos;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public char getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(char tipo) {
+		this.tipo = tipo;
+	}
+
+	public String[] getProtocolos() {
+		return protocolos;
+	}
+
+	public void setProtocolos(String[] protocolos) {
+		this.protocolos = protocolos;
+	}
+
 	abstract public ArrayList<String> verInfo();
 
 	abstract public boolean validarReserva();
