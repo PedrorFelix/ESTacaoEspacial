@@ -55,7 +55,7 @@ public class Nave {
 		this.protocolos = protocolos;
 	}
 	
-	private String getEspecs() {
+	public String getEspecs() {
 		String info = 
 				"ID: " + id +
 				"\nNome: " + nome +
@@ -69,7 +69,7 @@ public class Nave {
 		return info;
 	}
 	
-	private boolean validarProtocolos(String[] protocolosEst) {
+	public boolean validarProtocolos(String[] protocolosEst) {
 		for (int i = 0; i < protocolos.length; i++) {
 			for (int j = 0; j < protocolosEst.length; i++) {
 				if (protocolos[i].equals(protocolosEst[j]))
@@ -79,7 +79,7 @@ public class Nave {
 		return false;
 	}
 	
-	private void validarTempoResv() {
+	public void validarTempoResv() {
 		
-	};
+	}
 }

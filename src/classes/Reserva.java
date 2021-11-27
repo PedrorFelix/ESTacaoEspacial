@@ -56,5 +56,12 @@ public class Reserva {
 		this.t_out = t_out;
 	}
 	
+	public String getInfo() {
+		return 	"ID: " + id +
+				"\nEstação(ID/Nome): " + est.getId() + " / " + est.getNome() +
+				"\nNave(ID/Nome): " + nave.getId() + " / " + nave.getNome() +
+				"\nTempo de Entrada: " + t_in +
+				"\nTempo de Saida: " + t_out;
+	}
 	
 }

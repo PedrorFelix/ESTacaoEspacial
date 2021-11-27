@@ -37,7 +37,7 @@ public class MenuNave {
 		do {
 			// TODO alterar este menu
 			String menu = "ESTação Espacial - Simulação de Nave\n\n" +
-					  "Nave: " + "IDNAVE" + "  " + "NOMENAVE" +"\n\n" +  
+					  "Nave: " + nave.getId() + "  " + nave.getNome() +"\n\n" +  
 		              "R - nova Reserva\n" +
 		              "V - Ver reservas\n" + 
 		              "E - ver Especificações\n\n\n" + 
@@ -163,13 +163,7 @@ public class MenuNave {
 	/** imprime as especificações da nave
 	 */
 	private void verEspecificacoes() {
-		// TODO completar as informações
-		consola.println( "ID_NAVE" + "  " + "NOME_NAVE" );
-		consola.println( "Potência: POTENCIA_NAVE  massa: MASSA_NAVE" );
-		consola.println( "Dimensões (Comp x Larg x Alt): COMP x LARG x ALT" );
-		
-		consola.println("\nProtocolos");
-		consola.println( "PROTOCOLO1" + ", " );
+		consola.println(nave.getEspecs());
 		consola.readLine();
 	}
 
