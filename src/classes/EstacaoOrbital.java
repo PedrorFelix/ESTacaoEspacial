@@ -53,6 +53,10 @@ public class EstacaoOrbital extends EstacaoDefault{
 	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
 		//comparar se o tempo de saida é mais pequeno que o tmpo de entrada novo
 		//se o tempo de saida marcado é mais pequeno que a nova
+		
+		if(TU.estaDisponivel(TU)) {
+			TU.controlarDuracao(getT_max());
+		}		
 		return false;
 	}
 
