@@ -1,7 +1,5 @@
 package classes;
 
-import java.util.ArrayList;
-
 public class EstacaoWormHole extends EstacaoDefault{
 
 	private int raio_wh; //raio wormhole
@@ -31,9 +29,22 @@ public class EstacaoWormHole extends EstacaoDefault{
 	}
 
 	@Override
-	public ArrayList<String> verInfo() {
-		// TODO Auto-generated method stub
-		return null;
+	public String verInfo() {
+		String info ="";
+		final Integer id = getId();
+		info += "ID: " + id.toString() + "\n" +
+				"NOME: " + getNome() +"\n" +
+				"TIPO: " + getTipo() +"\n"+
+				"PROTOCOLOS: ";
+		for(int i=0; i<getProtocolos().length; i++){
+			String [] protocolos = getProtocolos();
+			info += protocolos[i] + " ";
+		}
+		info +="\n"+
+				"RAIO WORM HOLE: " + getRaio_wh() + "\n"+
+				"TEMPO TRAVESIA: " + getT_trav();
+		
+		return info;
 	}
 
 	@Override

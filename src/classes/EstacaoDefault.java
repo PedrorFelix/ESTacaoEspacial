@@ -1,8 +1,5 @@
 package classes;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public abstract class  EstacaoDefault  implements Estacao {
 	
 	private int id;

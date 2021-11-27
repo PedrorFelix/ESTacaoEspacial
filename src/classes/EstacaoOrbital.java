@@ -1,7 +1,5 @@
 package classes;
 
-import java.util.ArrayList;
-
 public class EstacaoOrbital extends EstacaoDefault{
 
 	private int n_portas; //numero de portas
@@ -36,7 +34,15 @@ public class EstacaoOrbital extends EstacaoDefault{
 		final Integer id = getId();
 		info += "ID: " + id.toString() + "\n" +
 				"NOME: " + getNome() +"\n" +
-				"TIPO: " + getTipo() +"\n";
+				"TIPO: " + getTipo() +"\n"+
+				"PROTOCOLOS: ";
+		for(int i=0; i<getProtocolos().length; i++){
+			String [] protocolos = getProtocolos();
+			info += protocolos[i] + " ";
+		}
+		info +="\n"+
+				"NUMERO PORTAS: " + getN_portas() + "\n"+
+				"TEMPO MÁXIMO: " + getT_max();
 		
 		return info;
 	}
