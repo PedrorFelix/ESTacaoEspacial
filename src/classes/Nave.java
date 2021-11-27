@@ -79,5 +79,7 @@ public class Nave {
 		return false;
 	}
 	
-	private void validarTempoResv() {};
+	private void validarTempoResv() {
+		
+	};
 }

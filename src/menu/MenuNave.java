@@ -34,7 +34,6 @@ public class MenuNave {
 		// até ser escolhida uma nave válida
 		while(nave == null) 
 			mudarNave();
-		
 		do {
 			// TODO alterar este menu
 			String menu = "ESTação Espacial - Simulação de Nave\n\n" +
@@ -178,14 +177,13 @@ public class MenuNave {
 	 */
 	private void mudarNave() {
 		consola.println( "Número da nave?");
-		int id = consola.readInt();
-		// TODO ver se nave existe
-		if( true ) {
+		String id = consola.readLine();
+		if(server.getNaves().containsKey(id)) {
 			consola.println("Mudança efetuada.");
+			nave = server.getNaves().get(id);
 		}
 		else 
 			consola.println("Nave desconhecida! Mudança não efetuada");
-		
 		consola.readLine();
 	}
 	
