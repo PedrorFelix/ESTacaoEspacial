@@ -1,10 +1,14 @@
 package menu;
 
+import classes.Nave;
+import classes.Server;
 import consola.SConsola;
 
 public class MenuNave {
 
 	private SConsola consola; // a consola para a interface com o utilizador
+	private Nave nave; // nave selecionada
+	private Server server; // server para obter informação
 	
 	/**
 	 * construtor do menu da nave
@@ -13,8 +17,9 @@ public class MenuNave {
 	 * @param comp comprimento da janela da consola
 	 * @param alt altura da janela da consola
 	 */
-	public MenuNave( int x, int y, int comp, int alt ){
+	public MenuNave( int x, int y, int comp, int alt, Server server){
 		consola = new SConsola( "ESTação Espacial - Simulador de Nave", x, y, comp, alt );
+		this.server = server;
 	}
 
 	/** 

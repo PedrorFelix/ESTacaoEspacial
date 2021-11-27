@@ -15,7 +15,7 @@ public class EstacaoEspacial extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean estaDisponivel() {
+	public boolean validarReserva() {
 		// TODO Auto-generated method stub
 		return false;
 	}

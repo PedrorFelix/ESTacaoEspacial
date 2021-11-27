@@ -2,15 +2,14 @@ package classes;
 
 public class Nave {
 
-	private static int id;
+	private static String id;
 	private static String nome;
 	private static int dimensoes[];
 	private static int massa;
 	private static int potencia;
 	private static String protocolos[];
 	
-	public Nave(int id, String nome, int dimensoes[], int massa, int potencia, String protocolos[]) {
-		
+	public Nave(String id, String nome, int dimensoes[], int massa, int potencia, String protocolos[]) {
 		this.id =id;
 		this.nome = nome;
 		this.dimensoes = dimensoes;
@@ -19,10 +18,10 @@ public class Nave {
 		this.protocolos = protocolos;
 	}
 	
-	public static int getId() {
+	public static String getId() {
 		return id;
 	}
-	public static void setId(int id) {
+	public static void setId(String id) {
 		Nave.id = id;
 	}
 	public static String getNome() {
@@ -56,13 +55,13 @@ public class Nave {
 		Nave.protocolos = protocolos;
 	}
 	
-	private void verReservas() {} //Reserva[]
+	private String[] getEspecs() {
+		
+	}
 	
-	private void verEspcs() {}
+	private boolean validarProtocolos() {
+		return false;
+	}
 	
-	private void validarProtocolos() {}
-	
-	private void estaDisponivel() {};
-	
-	
+	private void validarTempoResv() {};
 }

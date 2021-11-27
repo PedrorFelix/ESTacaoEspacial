@@ -8,9 +8,8 @@ public abstract class  EstacaoDefault  implements Estacao {
 	private String nome;
 	private char tipo;
 	private String protocolos[];
-	@Override
-	public ArrayList<Reserva> verReservas() {
-		return null;
-		// TODO Auto-generated method stub
-	}
+	
+	abstract public ArrayList<String> verInfo();
+
+	abstract public boolean validarReserva();
 }
