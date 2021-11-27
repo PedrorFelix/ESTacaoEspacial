@@ -56,7 +56,7 @@ public class Nave {
 	}
 	
 	private String[] getEspecs() {
-		
+		return null;
 	}
 	
 	private boolean validarProtocolos() {

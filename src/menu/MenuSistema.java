@@ -1,5 +1,6 @@
 package menu;
 
+import classes.Server;
 import consola.SConsola;
 
 
@@ -11,7 +12,7 @@ import consola.SConsola;
 public class MenuSistema {
 
 	private SConsola aConsola; // a consola para a interface com o utilizador
-	
+	private Server server; // server para obter informação
 	/**
 	 * construtor da aplicação
 	 * @param x coordenada x onde deve ser colocada a janela da consola
@@ -19,8 +20,9 @@ public class MenuSistema {
 	 * @param comp comprimento da janela da consola
 	 * @param alt altura da janela da consola
 	 */
-	public MenuSistema( int x, int y, int comp, int alt ){
+	public MenuSistema( int x, int y, int comp, int alt, Server server){
 		aConsola = new SConsola( "ESTação Espacial", x, y, comp, alt );
+		this.server = server;
 	}
 
 	/** 
