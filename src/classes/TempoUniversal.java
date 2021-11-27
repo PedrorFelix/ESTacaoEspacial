@@ -4,6 +4,14 @@ public class TempoUniversal {
 	private long t_in;
 	private long t_out;
 	
+	public long getTUEntrada() {
+		return t_in;
+	}
+	
+	public long getTUSaida() {
+		return t_out;
+	}
+	
 	public TempoUniversal() {
 		t_in = 0;
 		t_out = 0;

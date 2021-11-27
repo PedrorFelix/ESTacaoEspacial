@@ -5,15 +5,21 @@ public class Reserva {
 	private int id;
 	private Estacao est; // id estacao
 	private Nave nave;//id nave
-	private long t_in;//tu de entrada
-	private long t_out;//tu de saida
+	private TempoUniversal tempo; // intervalo de tempo
 	
-	public Reserva(int id, Estacao est, Nave nave, long t_in, long t_out) {
+	public Reserva(int id, Estacao est, Nave nave, TempoUniversal tempo) {
 		this.id = id;
 		this.est = est;
 		this.nave = nave;
-		this.t_in = t_in;
-		this.t_out = t_out;
+		this.tempo = tempo;
+	}
+
+	public TempoUniversal getTempo() {
+		return tempo;
+	}
+
+	public void setTempo(TempoUniversal tempo) {
+		this.tempo = tempo;
 	}
 
 	public int getId() {
@@ -40,28 +46,13 @@ public class Reserva {
 		this.nave = nave;
 	}
 
-	public long getT_in() {
-		return t_in;
-	}
-
-	public void setT_in(long t_in) {
-		this.t_in = t_in;
-	}
-
-	public long getT_out() {
-		return t_out;
-	}
-
-	public void setT_out(long t_out) {
-		this.t_out = t_out;
-	}
 	
 	public String getInfo() {
 		return 	"ID: " + id +
 				"\nEstação(ID/Nome): " + est.getId() + " / " + est.getNome() +
 				"\nNave(ID/Nome): " + nave.getId() + " / " + nave.getNome() +
-				"\nTempo de Entrada: " + t_in +
-				"\nTempo de Saida: " + t_out;
+				"\nTempo de Entrada: " + tempo.getTUEntrada() +
+				"\nTempo de Saida: " + tempo.getTUSaida();
 	}
 	
 }

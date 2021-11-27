@@ -35,7 +35,6 @@ public class MenuNave {
 		while(nave == null) 
 			mudarNave();
 		do {
-			// TODO alterar este menu
 			String menu = "ESTação Espacial - Simulação de Nave\n\n" +
 					  "Nave: " + nave.getId() + "  " + nave.getNome() +"\n\n" +  
 		              "R - nova Reserva\n" +

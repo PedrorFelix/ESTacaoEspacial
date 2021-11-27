@@ -68,18 +68,4 @@ public class Nave {
 			info += "\n" + protocolos[i];
 		return info;
 	}
-	
-	public boolean validarProtocolos(String[] protocolosEst) {
-		for (int i = 0; i < protocolos.length; i++) {
-			for (int j = 0; j < protocolosEst.length; i++) {
-				if (protocolos[i].equals(protocolosEst[j]))
-					return true;
-			}
-		}
-		return false;
-	}
-	
-	public void validarTempoResv() {
-		
-	}
 }

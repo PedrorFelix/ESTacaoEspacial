@@ -22,13 +22,21 @@ public class Server {
 		return reservas;
 	}
 	
+	public ArrayList<Reserva> getReservas(String id_nave) {
+		return reservas;
+	}
+	
+	public ArrayList<Reserva> getReservas(int id_est) {
+		return reservas;
+	}
+	
 	public void setReservas() {
 		try {
 			File fich = new File("naves.txt");
 			Scanner scanner = new Scanner(fich);
 			while (scanner.hasNextLine()) {
 				String[] reserva = scanner.nextLine().split("\t");
-				reservas.add(new Reserva(Integer.parseInt(reserva[0]), estacoes.get(reserva[1]), naves.get(reserva[2]), Long.parseLong(reserva[3]), Long.parseLong(reserva[4])));
+				reservas.add(new Reserva(Integer.parseInt(reserva[0]), estacoes.get(reserva[1]), naves.get(reserva[2]), new TempoUniversal(Long.parseLong(reserva[3]), Long.parseLong(reserva[4]))));
 		    }
 		    scanner.close();
 	    } catch (FileNotFoundException e) {
@@ -62,6 +70,7 @@ public class Server {
 	public HashMap<String, Estacao> getEstacoes() {
 		return estacoes;
 	}
+	
 	public void setEstacoes() {
 		try {
 			File fich = new File("estacoes.txt");
