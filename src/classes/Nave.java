@@ -56,14 +56,25 @@ public class Nave {
 	}
 	
 	private String getEspecs() {
-		String info;
-		
-		return "";
+		String info = 
+				"ID: " + id +
+				"\nNome: " + nome +
+				"\nComprimento: " + dimensoes[0] +
+				"\nAltura: " + dimensoes[1] +
+				"\nLargura: " + dimensoes[2] +
+				"\nMassa: " + massa +
+				"\nPotência: " + potencia;
+		for(int i = 0; i < protocolos.length; i++)
+			info += "\n" + protocolos[i];
+		return info;
 	}
 	
 	private boolean validarProtocolos(String[] protocolosEst) {
 		for (int i = 0; i < protocolos.length; i++) {
-			for ()
+			for (int j = 0; j < protocolosEst.length; i++) {
+				if (protocolos[i].equals(protocolosEst[j]))
+					return true;
+			}
 		}
 		return false;
 	}
