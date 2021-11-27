@@ -91,19 +91,9 @@ public class MenuSistema {
 	 */
 	private void verEstacao(){
 		// TODO pedir a estação
-		ArrayList<String> estacao = pedirEstacao().verInfo();
-		
-		aConsola.clear();
-		// TODO completar informação
-		aConsola.println( "Estação: " + estacao );
-		String[] protocolos= estacao.getProtocolos();
-		aConsola.println( "Protocolos suportados" );
-		for(int i=0; i< estacao.getProtocolos().length; i++) {
-		aConsola.print(protocolos[i]);
-		aConsola.println( "" );
-		}
-		
-		
+		String estacao = pedirEstacao().verInfo();
+		aConsola.println(estacao);
+		aConsola.println( "\n" );		
 		aConsola.println("Reservas na estação\n" );
 		// TODO imprimir info das reservas
 		for( int i=0; i < 1; i++ ){

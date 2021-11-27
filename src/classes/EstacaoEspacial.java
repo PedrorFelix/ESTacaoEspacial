@@ -44,17 +44,18 @@ public class EstacaoEspacial extends EstacaoDefault{
 		final Integer id = getId();
 		info += "ID: " + id.toString() + "\n" +
 				"NOME: " + getNome() +"\n" +
-				"TIPO: " + getTipo() +"\n"+
+				"TIPO: Espacial\n"+
 				"PROTOCOLOS: ";
 		for(int i=0; i<getProtocolos().length; i++){
-			String [] protocolos = getProtocolos();
-			info += protocolos[i] + " ";
+			String protocolos = getProtocolos()[i];
+			info += protocolos + " ";
 		}
 		info +="\n"+
-				"VOLUME DO HANGAR: " + getV_hangar() + "\n";
+				"VOLUME DO HANGAR: " + getV_hangar() + "\n"+
+				"DIMENSÕES DA PORTA: ";
 		for(int i=0;i<getDim_porta().length; i++) {
 			Integer dim = getDim_porta()[i];
-			info += dim.toString();
+			info += dim.toString() + " ";
 		}
 		info += "\n"+
 				"TEMPO MÁXIMO: " + getT_max();
