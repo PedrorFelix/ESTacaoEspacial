@@ -2,12 +2,12 @@ package classes;
 
 public class Nave {
 
-	private static String id;
-	private static String nome;
-	private static int dimensoes[];
-	private static int massa;
-	private static int potencia;
-	private static String protocolos[];
+	private String id;
+	private String nome;
+	private int dimensoes[];
+	private int massa;
+	private int potencia;
+	private String protocolos[];
 	
 	public Nave(String id, String nome, int dimensoes[], int massa, int potencia, String protocolos[]) {
 		this.id =id;
@@ -18,41 +18,41 @@ public class Nave {
 		this.protocolos = protocolos;
 	}
 	
-	public static String getId() {
+	public String getId() {
 		return id;
 	}
-	public static void setId(String id) {
-		Nave.id = id;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public static String getNome() {
+	public String getNome() {
 		return nome;
 	}
-	public static void setNome(String nome) {
-		Nave.nome = nome;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	public static int[] getDimensoes() {
+	public int[] getDimensoes() {
 		return dimensoes;
 	}
-	public static void setDimensoes(int[] dimensoes) {
-		Nave.dimensoes = dimensoes;
+	public void setDimensoes(int[] dimensoes) {
+		this.dimensoes = dimensoes;
 	}
-	public static int getMassa() {
+	public int getMassa() {
 		return massa;
 	}
-	public static void setMassa(int massa) {
-		Nave.massa = massa;
+	public void setMassa(int massa) {
+		this.massa = massa;
 	}
-	public static int getPotencia() {
+	public int getPotencia() {
 		return potencia;
 	}
-	public static void setPotencia(int potencia) {
-		Nave.potencia = potencia;
+	public void setPotencia(int potencia) {
+		this.potencia = potencia;
 	}
-	public static String[] getProtocolos() {
+	public String[] getProtocolos() {
 		return protocolos;
 	}
-	public static void setProtocolos(String[] protocolos) {
-		Nave.protocolos = protocolos;
+	public void setProtocolos(String[] protocolos) {
+		this.protocolos = protocolos;
 	}
 	
 	private String[] getEspecs() {
