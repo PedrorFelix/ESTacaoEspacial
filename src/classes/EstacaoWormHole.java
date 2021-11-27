@@ -34,7 +34,7 @@ public class EstacaoWormHole extends EstacaoDefault{
 		final Integer id = getId();
 		info += "ID: " + id.toString() + "\n" +
 				"NOME: " + getNome() +"\n" +
-				"TIPO: " + getTipo() +"\n"+
+				"TIPO: Worm Hole\n"+
 				"PROTOCOLOS: ";
 		for(int i=0; i<getProtocolos().length; i++){
 			String [] protocolos = getProtocolos();
