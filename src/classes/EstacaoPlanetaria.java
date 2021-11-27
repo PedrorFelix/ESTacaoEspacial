@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 public class EstacaoPlanetaria extends EstacaoDefault{
 
-	private int g; //gravidade planeta/lua
+	private double g; //gravidade planeta/lua
 	
-	public EstacaoPlanetaria(int id, String nome,String[] protocolos, int g) {
+	public EstacaoPlanetaria(int id, String nome,String[] protocolos, double g) {
 		super(id, nome, 'P', protocolos);
 		this.g = g;
 	}
 	
 
-	public int getG() {
+	public double getG() {
 		return g;
 	}
 
-	public void setG(int g) {
+	public void setG(double g) {
 		this.g = g;
 	}
 
