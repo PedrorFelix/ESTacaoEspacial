@@ -1,6 +1,9 @@
 package menu;
 
 import classes.Server;
+import java.util.HashMap;
+import classes.Estacao;
+import classes.EstacaoDefault;
 import consola.SConsola;
 
 
@@ -112,8 +115,12 @@ public class MenuSistema {
 	private Object pedirEstacao() {
 		do {
 			aConsola.println( "Número da estação?");
-			int id = aConsola.readInt();
+			Integer id = aConsola.readInt();
 			// TODO ver se a estação existe
+			HashMap<String, Estacao> estacoes= server.getEstacoes();
+			if(id<estacoes.size())
+				return estacoes.get(id.toString());
+			
 			if( false )
 				aConsola.println("Essa estação não existe!");
 		// TODO enquanto id não for válido 
