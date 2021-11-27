@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class EstacaoWormHole extends EstacaoDefault{
 
 	private int raio_wh; //raio wormhole
@@ -48,7 +50,7 @@ public class EstacaoWormHole extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva() {
+	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
 		// TODO Auto-generated method stub
 		return false;
 	}

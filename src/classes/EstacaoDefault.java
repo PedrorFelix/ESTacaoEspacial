@@ -48,6 +48,14 @@ public abstract class  EstacaoDefault  implements Estacao {
 	}
 
 	abstract public String verInfo();
-
-	abstract public boolean validarReserva(Nave n);
+	
+	public boolean validarProtocolos(String[] protocolosNave) {
+		for (int i = 0; i < protocolos.length; i++) {
+			for (int j = 0; j < protocolosNave.length; i++) {
+				if (protocolos[i].equals(protocolosNave[j]))
+					return true;
+			}
+		}
+		return false;
+	}
 }

@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class EstacaoPlanetaria extends EstacaoDefault{
 
 	private double g; //gravidade planeta/lua
@@ -37,7 +39,7 @@ public class EstacaoPlanetaria extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva(Nave n) {
+	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
 		double p_min = (n.getMassa() * getG())/2;
 		
 		if(p_min <n.getPotencia())

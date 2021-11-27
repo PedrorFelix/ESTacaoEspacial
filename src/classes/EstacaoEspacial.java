@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class EstacaoEspacial extends EstacaoDefault{
 
 	private int v_hangar; //volume hangar
@@ -64,7 +66,7 @@ public class EstacaoEspacial extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva(Nave n) {
+	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
 		return false;
 	}
 }

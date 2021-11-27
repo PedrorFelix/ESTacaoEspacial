@@ -14,12 +14,14 @@ public class TempoUniversal {
 		this.t_out = t_out;
 	}
 	
+	// detetar se este espaço de tempo esta ocupado
 	public boolean estaDisponivel(TempoUniversal TU){
 		if(t_in >= TU.t_out && t_out > TU.t_in)
 			return true;
 		return false;
 	}
 	
+	// detetar se a duracao e superior ao tempo maximo e se for diminuir o tempo de saida
 	public void controlarDuracao(long t_max) {
 		if(t_out - t_in > t_max) {
 			t_out -= (t_out - t_in) - t_max;

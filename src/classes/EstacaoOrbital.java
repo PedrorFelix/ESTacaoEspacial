@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class EstacaoOrbital extends EstacaoDefault{
 
 	private int n_portas; //numero de portas
@@ -48,7 +50,7 @@ public class EstacaoOrbital extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva(Nave n) {
+	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
 		//comparar se o tempo de saida é mais pequeno que o tmpo de entrada novo
 		//se o tempo de saida marcado é mais pequeno que a nova
 		return false;

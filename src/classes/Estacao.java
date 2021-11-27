@@ -1,19 +1,18 @@
 package classes;
 
+import java.util.ArrayList;
+
 public interface Estacao {
-	String verInfo();
-<<<<<<< Updated upstream
-	boolean validarReserva();
-	public int getId();
-	public void setId(int id);
-	public String getNome();
-	public void setNome(String nome);
-	public char getTipo();
-	public void setTipo(char tipo);
-	public String[] getProtocolos();
-	public void setProtocolos(String[] protocolos);
-=======
-	boolean validarReserva(Nave n);
 	
->>>>>>> Stashed changes
+	public int getId();
+	public String getNome();
+	public char getTipo();
+	public String[] getProtocolos();
+	public void setId(int id);
+	public void setNome(String nome);
+	public void setTipo(char tipo);
+	public void setProtocolos(String[] protocolos);
+	String verInfo();
+	boolean validarProtocolos(String[] protocolosNave);
+	boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU);
 }
