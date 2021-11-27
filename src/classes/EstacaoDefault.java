@@ -49,5 +49,5 @@ public abstract class  EstacaoDefault  implements Estacao {
 
 	abstract public String verInfo();
 
-	abstract public boolean validarReserva();
+	abstract public boolean validarReserva(Nave n);
 }

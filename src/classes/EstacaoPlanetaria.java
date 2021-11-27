@@ -37,9 +37,13 @@ public class EstacaoPlanetaria extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean validarReserva(Nave n) {
+		double p_min = (n.getMassa() * getG())/2;
+		
+		if(p_min <n.getPotencia())
+			return false;
+		return true;
 	}
-	
+
+
 }

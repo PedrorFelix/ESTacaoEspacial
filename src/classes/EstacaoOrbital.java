@@ -48,8 +48,9 @@ public class EstacaoOrbital extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva() {
-		// TODO Auto-generated method stub
+	public boolean validarReserva(Nave n) {
+		//comparar se o tempo de saida é mais pequeno que o tmpo de entrada novo
+		//se o tempo de saida marcado é mais pequeno que a nova
 		return false;
 	}
 
