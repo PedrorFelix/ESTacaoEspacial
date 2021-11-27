@@ -3,16 +3,15 @@ package classes;
 public class Reserva {
 
 	private int id;
-	private int id_est; // id estacao
-	private int id_nave;//id nave
+	private Estacao est; // id estacao
+	private Nave nave;//id nave
 	private long t_in;//utu de entrada
 	private long t_out;//utu de saida
 	
-	public Reserva(int id, int id_est, int id_nave, long t_in, long t_out) {
-		super();
+	public Reserva(int id, Estacao est, Nave nave, long t_in, long t_out) {
 		this.id = id;
-		this.id_est = id_est;
-		this.id_nave = id_nave;
+		this.est = est;
+		this.nave = nave;
 		this.t_in = t_in;
 		this.t_out = t_out;
 	}
@@ -25,20 +24,20 @@ public class Reserva {
 		this.id = id;
 	}
 
-	public int getId_est() {
-		return id_est;
+	public Estacao get_estacao() {
+		return est;
 	}
 
-	public void setId_est(int id_est) {
-		this.id_est = id_est;
+	public void setId_est(Estacao est) {
+		this.est = est;
 	}
 
-	public int getId_nave() {
-		return id_nave;
+	public Nave get_nave() {
+		return nave;
 	}
 
-	public void setId_nave(int id_nave) {
-		this.id_nave = id_nave;
+	public void set_nave(Nave nave) {
+		this.nave = nave;
 	}
 
 	public long getT_in() {

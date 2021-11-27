@@ -27,14 +27,8 @@ public class Server {
 			File fich = new File("naves.txt");
 			Scanner scanner = new Scanner(fich);
 			while (scanner.hasNextLine()) {
-				String[] nave = scanner.nextLine().split("\t");
-				String[] protocolos = new String[nave.length - 7];
-				int index = 0;
-				int[] dimensoes = {Integer.parseInt(nave[2]), Integer.parseInt(nave[3]), Integer.parseInt(nave[4])};
-				for(int i = 7; i < nave.length; i++) {
-					protocolos[index++] = nave[i];
-				}
-				naves.put(nave[0], new Nave(nave[0], nave[1], dimensoes, Integer.parseInt(nave[5]), Integer.parseInt(nave[6]), protocolos));
+				String[] reserva = scanner.nextLine().split("\t");
+				reservas.add(new Reserva(Integer.parseInt(reserva[0]), estacoes.get(reserva[1]), naves.get(reserva[2]), Long.parseLong(reserva[3]), Long.parseLong(reserva[4])));
 		    }
 		    scanner.close();
 	    } catch (FileNotFoundException e) {
@@ -96,7 +90,7 @@ public class Server {
 				case "E":
 					protocolos = new String[estacao.length - 6];
 					index = 0;
-					for(int i = 5; i < estacao.length; i++) {
+					for(int i = 6; i < estacao.length; i++) {
 						protocolos[index++] = estacao[i];
 					}
 					index = 0;
@@ -119,9 +113,5 @@ public class Server {
 		     e.printStackTrace();
 	    }
 	}
-	
-	
-	
-	
 
 }

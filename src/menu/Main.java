@@ -40,11 +40,13 @@ public class Main {
 	/** lê o ficheiro de texto com a informação das estações
 	 */
 	private static void readEstacoes( ){
+		server.setEstacoes();
 	}
 
 	/** lê o ficheiro de texto com a informação das reservas
 	 */
 	private static void readReservas( ){
+		server.setReservas();
 	}
 
 	/** grava o ficheiro de texto com a informação das reservas
