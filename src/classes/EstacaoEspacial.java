@@ -79,8 +79,10 @@ public class EstacaoEspacial extends EstacaoDefault{
 			//ver se cabe no hangar
 			int[] dim = n.getDimensoes();
 			int v = dim[0] + dim[1] + dim[2];
-			if ((volumeOcupado + v) < getV_hangar())
-				return true;
+			if ((volumeOcupado + v) < getV_hangar()) {
+				Reserva r = new Reserva(reservas.size(), this, n, tempo);
+				reservas.add(r);
+				return true;}
 		}
 		return false;
 	}

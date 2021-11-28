@@ -44,6 +44,9 @@ public class EstacaoPlanetaria extends EstacaoDefault{
 		
 		if(p_min <n.getPotencia())
 			return false;
+		
+		Reserva r = new Reserva(reservas.size(), this, n, tempo);
+		reservas.add(r);
 		return true;
 	}
 
