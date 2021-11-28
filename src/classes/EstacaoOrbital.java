@@ -50,13 +50,20 @@ public class EstacaoOrbital extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
-		//comparar se o tempo de saida é mais pequeno que o tmpo de entrada novo
-		//se o tempo de saida marcado é mais pequeno que a nova
+	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {		
 		
-		if(TU.estaDisponivel(TU)) {
+		int ocupacao = 0;//Ver reservas no tempo pedido
+		for(int i=0; i<reservas.size(); i++) {
+			TempoUniversal t = reservas.get(i).getTempo();
+			if(! t.estaDisponivel(TU)) {
+				ocupacao++;
+			}	
+		}
+		if((getN_portas()-ocupacao)>0) {//n_portas - n_reservas	if n_portas>0 controlar duração
 			TU.controlarDuracao(getT_max());
-		}		
+			return true;
+		}
+		//else false
 		return false;
 	}
 

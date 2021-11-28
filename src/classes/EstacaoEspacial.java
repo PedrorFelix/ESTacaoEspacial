@@ -67,6 +67,21 @@ public class EstacaoEspacial extends EstacaoDefault{
 
 	@Override
 	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
+		if (getDim_porta()[0]>n.getDimensoes()[0] && getDim_porta()[1]>n.getDimensoes()[1]) { //ver se cabe na porta
+			int volumeOcupado = 0;//Ver a ocupacao
+			for (int i = 0; i < reservas.size(); i++) {
+				Nave nn = reservas.get(i).get_nave();
+				int[] dim = nn.getDimensoes();
+				int v = dim[0] + dim[1] + dim[2];
+				volumeOcupado += v;
+				v = 0;
+			}
+			//ver se cabe no hangar
+			int[] dim = n.getDimensoes();
+			int v = dim[0] + dim[1] + dim[2];
+			if ((volumeOcupado + v) < getV_hangar())
+				return true;
+		}
 		return false;
 	}
 }

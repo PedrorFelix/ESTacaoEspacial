@@ -51,7 +51,18 @@ public class EstacaoWormHole extends EstacaoDefault{
 
 	@Override
 	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean k =true;
+		for(int i=0;i<n.getDimensoes().length;i++) {
+			if(n.getDimensoes()[i]>getRaio_wh())
+				k=false;
+		}
+		if(k) {
+			TU.controlarDuracao(t_trav);
+			for (int i = 0; i < reservas.size(); i++) {
+				if (!TU.estaDisponivel(reservas.get(i).getTempo()))
+					return false;
+			} 
+		}
+			return true;
 	}
 }
