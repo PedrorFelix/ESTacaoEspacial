@@ -4,6 +4,14 @@ public class TempoUniversal {
 	private long t_in;
 	private long t_out;
 	
+	public void setTUEntrada(long t_in) {
+		this.t_in = t_in;
+	}
+	
+	public void setTUSaida(long t_out) {
+		this.t_out = t_out;
+	}
+	
 	public long getTUEntrada() {
 		return t_in;
 	}
@@ -22,7 +30,7 @@ public class TempoUniversal {
 		this.t_out = t_out;
 	}
 	
-	// detetar se este espaço de tempo esta ocupado
+	// detetar se este espaço de tempo interseta outro tempo
 	public boolean estaDisponivel(TempoUniversal TU){
 		if(t_in >= TU.t_out && t_out > TU.t_in)
 			return true;
