@@ -55,4 +55,8 @@ public class Reserva {
 				"\nTempo de Saida: " + tempo.getTUSaida();
 	}
 	
+	public String printReserva() {
+		return id + "\t" + est.getId() + "\t" + nave.getId() + "\t" + tempo.getTUEntrada() + "\t" + tempo.getTUSaida() + "\n";
+	}
+	
 }

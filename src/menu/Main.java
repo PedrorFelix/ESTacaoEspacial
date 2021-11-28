@@ -16,7 +16,7 @@ public class Main {
 			public void run() {
 				MenuSistema aluguer = new MenuSistema( 20, 100, 550, 500, server);
 				aluguer.menuPrincipal();
-				writeReservas( );
+				writeReservas();
 				System.exit( 0 );
 			};			
 		};
@@ -51,7 +51,7 @@ public class Main {
 
 	/** grava o ficheiro de texto com a informação das reservas
 	 */
-	private static void writeReservas( ) {
-		
+	private static void writeReservas() {
+		server.saveReservas();
 	}
 }

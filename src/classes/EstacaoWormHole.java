@@ -57,7 +57,7 @@ public class EstacaoWormHole extends EstacaoDefault{
 				k=false;
 		}
 		if(k) {
-			tempo.controlarDuracao(t_trav);
+			tempo.converterTempoTrav(t_trav);
 			for (int i = 0; i < reservas.size(); i++) {
 				if (!tempo.estaDisponivel(reservas.get(i).getTempo()))
 					return false;

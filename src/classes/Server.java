@@ -2,6 +2,8 @@ package classes;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -61,6 +63,25 @@ public class Server {
 		     e.printStackTrace();
 	    }
 	}
+ 	
+ 	public void saveReservas() {
+ 		try {
+ 			File fich = new File("abc.txt");
+ 			if(!fich.exists())
+ 				fich.createNewFile();
+ 			FileWriter myWriter = new FileWriter(fich);
+ 			String resv = "";
+ 			for(Reserva r : reservas) {
+ 				resv += r.printReserva();
+ 			}
+ 			myWriter.write(resv);
+ 			myWriter.close();
+ 		} catch (IOException e) {
+ 			System.out.println("Erro a gravar reservas");
+ 			e.printStackTrace();
+ 		}
+ 	}
+ 	
 	public HashMap<String, Nave> getNaves() {
 		return naves;
 	}

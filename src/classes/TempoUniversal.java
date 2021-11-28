@@ -43,4 +43,11 @@ public class TempoUniversal {
 			t_out -= (t_out - t_in) - t_max;
 		}
 	}
+	
+	// ajusta o intervalo de tempo para corresponder ao tempo de travessia
+	public void converterTempoTrav(long t_trav) {
+		if(t_out - t_in != t_trav) {
+			t_out -= t_in + t_trav;
+		}
+	}
 }

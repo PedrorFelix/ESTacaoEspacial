@@ -47,8 +47,8 @@ public class MenuNave {
 
 			consola.clear();
 			consola.println( menu );
-			if( true ) // TODO ver qual a prÃ³xima reserva , se houver
-				consola.println("\n\nProxima reserva: " + server.getReserva(nave));
+			if(!server.getReservas(nave).isEmpty())
+				consola.println("\n\nProxima reserva:\n" + server.getReserva(nave).getInfo());
 			else
 				consola.println("\n\nNão tem reservas");
 			op = Character.toUpperCase( consola.readChar() );
@@ -81,7 +81,7 @@ public class MenuNave {
 		consola.println("Menu de reservas\n\n"); 
 
 		// pedir estação
-		pedirEstacao();
+		estacao = pedirEstacao();
 
 		// validar protocolos da nave
 		if(!estacao.validarProtocolos(nave.getProtocolos())){
@@ -91,10 +91,10 @@ public class MenuNave {
 		}
 		
 		// receber intervalo de tempo
-		consola.println( "Qual o TU de entrada?\n" );
+		consola.println( "Qual o TU de entrada?" );
 		tempo.setTUEntrada(consola.readLong());
 		
-		consola.println( "Qual o TU de saída?\n" );
+		consola.println( "Qual o TU de saída?" );
 		tempo.setTUSaida(consola.readLong());
 		
 		for(int i = 0; i < server.getReservas(nave).size(); i++) {
@@ -111,17 +111,21 @@ public class MenuNave {
 			return;
 		}
 			
-		consola.println(server.getReserva(nave).getInfo());
+		consola.println(
+				"Estação(ID/Nome): " + estacao.getId() + " / " + estacao.getNome() +
+				"\nNave(ID/Nome): " + nave.getId() + " / " + nave.getNome() +
+				"\nTempo de Entrada: " + tempo.getTUEntrada() +
+				"\nTempo de Saida: " + tempo.getTUSaida());
 		
 		consola.println("Confirmar reserva? (S/N)");
 		char sim = Character.toUpperCase( consola.readChar() );
 		if(sim != 'S')
 			return;
 	
-		int index = server.getReservas().size();
+		int index = server.getReservas().size() + 1;
 		server.getReservas().add(new Reserva(index, estacao, nave, tempo));
 		
-		consola.println("Reserva criada com id: " + server.getReserva(nave).getId());
+		consola.println("Reserva criada com id: " + index);
 		consola.readLine();
 	}
 
@@ -131,10 +135,9 @@ public class MenuNave {
 	 */
 	private void verReservas() {
 		consola.clear();
-		if( false )
+		if(server.getReservas(nave).isEmpty())
 			consola.println("Sem reservas.");
-		
-		for( int i=0; i < server.getReservas().size(); i++ ){
+		for(int i=0; i < server.getReservas(nave).size(); i++){
 			consola.println(server.getReservas(nave).get(i).getInfo());
 			consola.println();
 		}
@@ -152,10 +155,8 @@ public class MenuNave {
 			consola.println( "Número da estação?");
 			id = consola.readInt();
 			if(id<estacoes.size())
-				return estacoes.get(id.toString());	
-			
+				return estacoes.get(id.toString());
 			consola.println("Essa estação não existe!");
-		// TODO enquanto id não for válido 
 		} while(!estacoes.containsKey(id.toString()));
 		return null;
 	}
