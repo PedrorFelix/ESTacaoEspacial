@@ -51,7 +51,7 @@ public abstract class  EstacaoDefault  implements Estacao {
 	
 	public boolean validarProtocolos(String[] protocolosNave) {
 		for (int i = 0; i < protocolos.length; i++) {
-			for (int j = 0; j < protocolosNave.length; i++) {
+			for (int j = 0; j < protocolosNave.length; j++) {
 				if (protocolos[i].equals(protocolosNave[j]))
 					return true;
 			}

@@ -63,7 +63,8 @@ public class Nave {
 				"\nAltura: " + dimensoes[1] +
 				"\nLargura: " + dimensoes[2] +
 				"\nMassa: " + massa +
-				"\nPotência: " + potencia;
+				"\nPotência: " + potencia +
+				"\nProtocolos:\n";
 		for(int i = 0; i < protocolos.length; i++)
 			info += "\n" + protocolos[i];
 		return info;

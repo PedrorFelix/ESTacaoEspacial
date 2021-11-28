@@ -4,6 +4,10 @@ import java.util.HashMap;
 
 import classes.Reserva;
 import classes.Estacao;
+import classes.EstacaoEspacial;
+import classes.EstacaoOrbital;
+import classes.EstacaoPlanetaria;
+import classes.EstacaoWormHole;
 import classes.Nave;
 import classes.Server;
 import classes.TempoUniversal;
@@ -44,7 +48,6 @@ public class MenuNave {
 		              "V - Ver reservas\n" + 
 		              "E - ver Especificações\n\n\n" + 
 		              "N - mudar de Nave";
-
 			consola.clear();
 			consola.println( menu );
 			if(!server.getReservas(nave).isEmpty())
@@ -85,7 +88,7 @@ public class MenuNave {
 
 		// validar protocolos da nave
 		if(!estacao.validarProtocolos(nave.getProtocolos())){
-			consola.println("Não pode usar essa estação!");
+			consola.println("Os protocolos não são suportados");
 			consola.readLine();
 			return;
 		}
@@ -97,8 +100,13 @@ public class MenuNave {
 		consola.println( "Qual o TU de saída?" );
 		tempo.setTUSaida(consola.readLong());
 		
+		if (tempo.getTUEntrada() < 0 || tempo.getTUSaida() <= tempo.getTUEntrada()) {
+			consola.println("Medidas de tempo inválidas");
+		}
+		
+		// verificar se ja tem reserva nesse tempo
 		for(int i = 0; i < server.getReservas(nave).size(); i++) {
-			if(tempo.estaDisponivel(server.getReservas().get(i).getTempo())){
+			if(!tempo.estaDisponivel(server.getReservas(nave).get(i).getTempo())){
 				consola.println("A nave já tem um compromisso nesse período!");
 				consola.readLine();
 				return;
@@ -106,14 +114,26 @@ public class MenuNave {
 		}
 		
 		if(!estacao.validarReserva(nave, server.getReservas(estacao), tempo)){
-			consola.println("A reserva não pode ser efetuada");
+			switch(estacao.getTipo()) {
+			case 'O':
+				consola.println("Não há portas disponiveis nesse intervalo de tempo");
+				break;
+			case 'W':
+				consola.println("A nave não cabe no Worm Hole");
+				break;
+			case 'E':
+				
+				break;
+			case 'P':
+				consola.println("A nave não tem potência suficiente");
+				break;
+			}
 			consola.readLine();
 			return;
 		}
 			
 		consola.println(
 				"Estação(ID/Nome): " + estacao.getId() + " / " + estacao.getNome() +
-				"\nNave(ID/Nome): " + nave.getId() + " / " + nave.getNome() +
 				"\nTempo de Entrada: " + tempo.getTUEntrada() +
 				"\nTempo de Saida: " + tempo.getTUSaida());
 		

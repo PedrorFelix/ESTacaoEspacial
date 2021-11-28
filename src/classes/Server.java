@@ -66,7 +66,7 @@ public class Server {
  	
  	public void saveReservas() {
  		try {
- 			File fich = new File("abc.txt");
+ 			File fich = new File("reservas.txt");
  			if(!fich.exists())
  				fich.createNewFile();
  			FileWriter myWriter = new FileWriter(fich);
