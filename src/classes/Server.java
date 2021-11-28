@@ -22,17 +22,33 @@ public class Server {
 		return reservas;
 	}
 	
-	public ArrayList<Reserva> getReservas(String id_nave) {
-		return reservas;
+	public ArrayList<Reserva> getReservas(Nave nave) {
+		ArrayList<Reserva> reservasNave = new ArrayList<Reserva>();
+		for(int i = 0; i < reservas.size(); i++) {
+			if (reservas.get(i).get_nave() == nave) {
+				reservasNave.add(reservas.get(i));
+			}
+		}
+		return reservasNave;
 	}
 	
-	public ArrayList<Reserva> getReservas(int id_est) {
-		return reservas;
+	public ArrayList<Reserva> getReservas(Estacao est) {
+		ArrayList<Reserva> reservasEst = new ArrayList<Reserva>();
+		for(int i = 0; i < reservas.size(); i++) {
+			if (reservas.get(i).get_estacao() == est) {
+				reservasEst.add(reservas.get(i));
+			}
+		}
+		return reservasEst;
 	}
 	
-	public void setReservas() {
+	/*public Reserva getReserva() {
+		
+	}*/
+	
+ 	public void setReservas() {
 		try {
-			File fich = new File("naves.txt");
+			File fich = new File("reservas.txt");
 			Scanner scanner = new Scanner(fich);
 			while (scanner.hasNextLine()) {
 				String[] reserva = scanner.nextLine().split("\t");
@@ -46,6 +62,9 @@ public class Server {
 	}
 	public HashMap<String, Nave> getNaves() {
 		return naves;
+	}
+	public Nave getNave(String id) {
+		return naves.get(id);
 	}
 	public void setNaves() {
 		try {

@@ -12,6 +12,7 @@ public class MenuNave {
 	private SConsola consola; // a consola para a interface com o utilizador
 	private Nave nave; // nave selecionada
 	private Server server; // server para obter informação
+	private Estacao estacao;
 	
 	/**
 	 * construtor do menu da nave
@@ -183,7 +184,7 @@ public class MenuNave {
 	/** devolve a informação de uma reserva em formato de texto
 	 */
 	private String getReservaInfo( ) {
-		// TODO completar a informação
+		
 		return "ID_RESERVA estação: ID_ESTACAO - NOME_ESTACAO  TUi: TU_ENTRADA  TUf: TU_SAIDA";
 	}
 }

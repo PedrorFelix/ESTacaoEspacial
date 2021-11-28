@@ -11,7 +11,7 @@ import consola.SConsola;
 /**
  * Classe responsável pela apresentação e
  * processamento do menu principal da aplicação
- * @author <por aqui nomes dos autores>
+ * @author <Daniel Pratas, Pedro Félix>
  */
 public class MenuSistema {
 
@@ -59,27 +59,14 @@ public class MenuSistema {
 		} while( op != 'X');
 		aConsola.close();            
 	}
-	
-	/**
-	 * imprime a informação completa de uma reserva
-	 */
-	private String getInfoReserva( ){
-		// TODO completar informação
-		return "ID_RESERVA Estação: ID_ESTACAO - NOME_ESTACAO"+
-				           "\nNave: ID_NAVE - NOME_NAVE" + 
-				           "\nTUi: TU_ENTRADA  TUf: TU_SAIDA";
-	}
-	
 		
 	/**
 	 * lista um resumo de todas as reservas
 	 */
 	private void verReservas() {
 		aConsola.clear();
-
-		// TODO  apresentar informação das reservas
-		for( int i=0; i < 1; i++ ){
-			aConsola.println( getInfoReserva( ) );
+		for( int i=0; i < server.getReservas().size(); i++ ){
+			aConsola.println(server.getReservas().get(i).getInfo());
 			aConsola.println();
 		}
 		aConsola.readLine();		
@@ -90,14 +77,13 @@ public class MenuSistema {
 	 * lista a informação sobre uma estação
 	 */
 	private void verEstacao(){
-		// TODO pedir a estação
-		String estacao = pedirEstacao().verInfo();
-		aConsola.println(estacao);
+		Estacao estacao = pedirEstacao();
+		aConsola.println(estacao.verInfo());
 		aConsola.println( "\n" );		
 		aConsola.println("Reservas na estação\n" );
-		// TODO imprimir info das reservas
-		for( int i=0; i < 1; i++ ){
-			aConsola.println( getInfoReserva( ) );
+		for( int i=0; i < server.getReservas(estacao).size(); i++ ){
+			aConsola.println(server.getReservas().get(i).getInfo());
+			aConsola.println();
 		}
 		aConsola.readLine();
 	}
@@ -107,16 +93,16 @@ public class MenuSistema {
 	 * @return a estação indicada pelo utilizador
 	 */
 	private Estacao pedirEstacao() {
+		Integer id;
+		HashMap<String, Estacao> estacoes = server.getEstacoes();
 		do {
 			aConsola.println( "Número da estação?");
-			Integer id = aConsola.readInt();
-			HashMap<String, Estacao> estacoes= server.getEstacoes();
-			if(id<estacoes.size())
+			id = aConsola.readInt();
+			if(estacoes.containsKey(id.toString()))
 				return estacoes.get(id.toString());	
 			
 			aConsola.println("Essa estação não existe!");
-		// TODO enquanto id não for válido 
-		} while( false );
+		} while(!estacoes.containsKey(id.toString()));
 		return null;
 	}
 }
