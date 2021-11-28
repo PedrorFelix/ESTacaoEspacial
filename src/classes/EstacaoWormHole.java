@@ -63,8 +63,7 @@ public class EstacaoWormHole extends EstacaoDefault{
 					return false;
 			} 
 		}
-		Reserva r = new Reserva(reservas.size(), this, n, tempo);
-		reservas.add(r);
+		reservas.add(new Reserva(reservas.size(), this, n, tempo));
 		return true;
 	}
 }
