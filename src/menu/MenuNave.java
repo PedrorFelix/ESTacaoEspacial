@@ -47,7 +47,7 @@ public class MenuNave {
 			consola.clear();
 			consola.println( menu );
 			if( true ) // TODO ver qual a prÃ³xima reserva , se houver
-				consola.println("\n\nProxima reserva: " + getReservaInfo( ) );
+				consola.println("\n\nProxima reserva: " + server.getReserva(nave));
 			else
 				consola.println("\n\nNão tem reservas");
 			op = Character.toUpperCase( consola.readChar() );
@@ -82,12 +82,14 @@ public class MenuNave {
 		// pedir estação
 		pedirEstacao();
 
+		// validar protocolos da nave
 		if(!estacao.validarProtocolos(nave.getProtocolos())){
 			consola.println("Não pode usar essa estação!");
 			consola.readLine();
 			return;
 		}
 		
+		// receber intervalo de tempo
 		consola.println( "Qual o TU de entrada?\n" );
 		tempo.setTUEntrada(consola.readLong());
 		
@@ -102,19 +104,13 @@ public class MenuNave {
 			}
 		}
 		
-		
-		// TODO testar se pode ser reservada
-		// ver se a estação aceita a reserva e em que período de tempo
-		// se sim indica qual a reserva que pode realmente fazer
-		if(  false /* se não pode reservar */ ){
+		if(!estacao.validarReserva(nave, server.getReservas(estacao), tempo)){
 			consola.println("A reserva não pode ser efetuada");
 			consola.readLine();
 			return;
 		}
 			
-		// TODO completar esta informação
-		consola.println("Estação: " + "NOME ESTAÇÃO" + "\nNave: "+ "NOME NAVE" +
-				         "\nTU entrada: "+ "TU_ENTRADA" + "\nTU saída: " + "TU_SAIDA" );
+		consola.println(server.getReserva(nave).getInfo());
 		
 		consola.println("Confirmar reserva? (S/N)");
 		char sim = Character.toUpperCase( consola.readChar() );
@@ -137,8 +133,9 @@ public class MenuNave {
 		if( false )
 			consola.println("Sem reservas.");
 		
-		for( int i=0; i < 1; i++  ){
-			consola.println( getReservaInfo( ) );
+		for( int i=0; i < server.getReservas().size(); i++ ){
+			consola.println(server.getReservas(nave).get(i).getInfo());
+			consola.println();
 		}
 		consola.readLine();		
 	}
@@ -180,12 +177,5 @@ public class MenuNave {
 		else 
 			consola.println("Nave desconhecida! Mudança não efetuada");
 		consola.readLine();
-	}
-	
-	/** devolve a informação de uma reserva em formato de texto
-	 */
-	private String getReservaInfo( ) {
-		
-		return "ID_RESERVA estação: ID_ESTACAO - NOME_ESTACAO  TUi: TU_ENTRADA  TUf: TU_SAIDA";
 	}
 }

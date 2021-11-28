@@ -42,9 +42,10 @@ public class Server {
 		return reservasEst;
 	}
 	
-	/*public Reserva getReserva() {
-		
-	}*/
+	public Reserva getReserva(Nave nave) {
+		ArrayList<Reserva> reservasNave = getReservas(nave);
+		return reservasNave.get(reservasNave.size() - 1);
+	}
 	
  	public void setReservas() {
 		try {
