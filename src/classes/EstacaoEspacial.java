@@ -15,7 +15,6 @@ public class EstacaoEspacial extends EstacaoDefault{
 		this.t_max = t_max;
 	}
 	
-	
 	public int getV_hangar() {
 		return v_hangar;
 	}
@@ -81,6 +80,7 @@ public class EstacaoEspacial extends EstacaoDefault{
 				tempo.controlarDuracao(v);
 				return true;
 			}
+			return false;
 		}
 		return false;
 	}
