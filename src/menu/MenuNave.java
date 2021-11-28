@@ -122,7 +122,7 @@ public class MenuNave {
 				consola.println("A nave não cabe no Worm Hole");
 				break;
 			case 'E':
-				
+				consola.println("A nave não cabe na estação");
 				break;
 			case 'P':
 				consola.println("A nave não tem potência suficiente");
