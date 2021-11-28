@@ -145,16 +145,17 @@ public class MenuNave {
 	 * @return a estação que o utilizador escolheu
 	 */
 	private Estacao pedirEstacao() {
+		Integer id;
+		HashMap<String, Estacao> estacoes= server.getEstacoes();
 		do {
 			consola.println( "Número da estação?");
-			Integer id = consola.readInt();
-			HashMap<String, Estacao> estacoes= server.getEstacoes();
+			id = consola.readInt();
 			if(id<estacoes.size())
 				return estacoes.get(id.toString());	
 			
 			consola.println("Essa estação não existe!");
 		// TODO enquanto id não for válido 
-		} while( false );
+		} while(!estacoes.containsKey(id.toString()));
 		return null;
 	}
 

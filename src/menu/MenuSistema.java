@@ -82,7 +82,7 @@ public class MenuSistema {
 		aConsola.println( "\n" );		
 		aConsola.println("Reservas na estação\n" );
 		for( int i=0; i < server.getReservas(estacao).size(); i++ ){
-			aConsola.println(server.getReservas().get(i).getInfo());
+			aConsola.println(server.getReservas(estacao).get(i).getInfo());
 			aConsola.println();
 		}
 		aConsola.readLine();
