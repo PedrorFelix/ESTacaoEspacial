@@ -59,11 +59,8 @@ public class EstacaoOrbital extends EstacaoDefault{
 			}	
 		}
 		//n_portas - n_reservas	if n_portas>0 controlar duração
-		if((getN_portas()-ocupacao)>0) {
-			tempo.controlarDuracao(getT_max());
-			reservas.add(new Reserva(reservas.size(), this, n, tempo));
+		if((getN_portas()-ocupacao)>0)
 			return true;
-		}
 		//else false
 		return false;
 	}

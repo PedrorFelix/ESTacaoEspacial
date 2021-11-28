@@ -79,8 +79,8 @@ public class EstacaoEspacial extends EstacaoDefault{
 			int v = dim[0] * dim[1] * dim[2];
 			if ((volumeOcupado + v) < getV_hangar()) {
 				tempo.controlarDuracao(v);
-				reservas.add(new Reserva(reservas.size(), this, n, tempo));
-				return true;}
+				return true;
+			}
 		}
 		return false;
 	}
