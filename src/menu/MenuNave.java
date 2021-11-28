@@ -5,6 +5,7 @@ import java.util.HashMap;
 import classes.Estacao;
 import classes.Nave;
 import classes.Server;
+import classes.TempoUniversal;
 import consola.SConsola;
 
 public class MenuNave {
@@ -74,31 +75,33 @@ public class MenuNave {
 	 * fazer uma nova reserva 
 	 */
 	private void novaReserva() {
+		TempoUniversal tempo = new TempoUniversal();
 		consola.clear();
 		consola.println("Menu de reservas\n\n"); 
 
 		// pedir estação
 		pedirEstacao();
 
-		// TODO ver se nave pode usar a estação
-		if( false ){
+		if(!estacao.validarProtocolos(nave.getProtocolos())){
 			consola.println("Não pode usar essa estação!");
 			consola.readLine();
 			return;
 		}
 		
 		consola.println( "Qual o TU de entrada?\n" );
-		int entradaTU = consola.readInt();
+		tempo.setTUEntrada(consola.readLong());
 		
 		consola.println( "Qual o TU de saída?\n" );
-		int saidaTU = consola.readInt();
-				
-		// TODO ver se nave está ocupada nesse periodo
-		if( false /* */){
-			consola.println("A nave já tem um compromisso nesse período!");
-			consola.readLine();
-			return;
+		tempo.setTUSaida(consola.readLong());
+		
+		for(int i = 0; i < server.getReservas(nave).size(); i++) {
+			if(tempo.estaDisponivel(server.getReservas().get(i).getTempo())){
+				consola.println("A nave já tem um compromisso nesse período!");
+				consola.readLine();
+				return;
+			}
 		}
+		
 		
 		// TODO testar se pode ser reservada
 		// ver se a estação aceita a reserva e em que período de tempo
