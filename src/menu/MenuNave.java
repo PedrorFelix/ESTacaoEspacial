@@ -4,10 +4,6 @@ import java.util.HashMap;
 
 import classes.Reserva;
 import classes.Estacao;
-import classes.EstacaoEspacial;
-import classes.EstacaoOrbital;
-import classes.EstacaoPlanetaria;
-import classes.EstacaoWormHole;
 import classes.Nave;
 import classes.Server;
 import classes.TempoUniversal;

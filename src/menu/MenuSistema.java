@@ -2,7 +2,6 @@ package menu;
 
 import classes.Server;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import classes.Estacao;
 import consola.SConsola;
