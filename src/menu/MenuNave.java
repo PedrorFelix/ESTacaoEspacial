@@ -2,6 +2,7 @@ package menu;
 
 import java.util.HashMap;
 
+import classes.Reserva;
 import classes.Estacao;
 import classes.Nave;
 import classes.Server;
@@ -114,13 +115,13 @@ public class MenuNave {
 		
 		consola.println("Confirmar reserva? (S/N)");
 		char sim = Character.toUpperCase( consola.readChar() );
-		if( sim != 'S' )
+		if(sim != 'S')
 			return;
 	
-		// TODO criar a reserva
+		int index = server.getReservas().size();
+		server.getReservas().add(new Reserva(index, estacao, nave, tempo));
 		
-		// TODO completar a informação
-		consola.println("Reserva criada com id: " + "ID_RESERVA" );
+		consola.println("Reserva criada com id: " + server.getReserva(nave).getId());
 		consola.readLine();
 	}
 
