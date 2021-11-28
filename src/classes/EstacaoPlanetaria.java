@@ -39,7 +39,7 @@ public class EstacaoPlanetaria extends EstacaoDefault{
 	}
 
 	@Override
-	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal TU) {
+	public boolean validarReserva(Nave n, ArrayList<Reserva> reservas, TempoUniversal tempo) {
 		double p_min = (n.getMassa() * getG())/2;
 		
 		if(p_min <n.getPotencia())

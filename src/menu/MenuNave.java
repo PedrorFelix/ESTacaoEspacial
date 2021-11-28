@@ -131,8 +131,6 @@ public class MenuNave {
 	 */
 	private void verReservas() {
 		consola.clear();
-		 
-		// TODO ver se tem reservas
 		if( false )
 			consola.println("Sem reservas.");
 		
